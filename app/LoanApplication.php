@@ -33,4 +33,16 @@ class LoanApplication extends Model
     public function borrowers() {
         return $this->hasMany(Borrower::class);
     }
+
+    public function totalAnnualIncome() {
+        $borrowers = $this->borrowers->load('job');
+
+        return $borrowers->sum('job.salary');
+    }
+
+    public function totalBankBalance() {
+        $borrowers = $this->borrowers->load('bankAccount');
+
+        return $borrowers->sum('bankAccount.balance');
+    }
 }
