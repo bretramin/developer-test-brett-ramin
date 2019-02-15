@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->integer('borrower_id')->unsigned();
             $table->string('title');
-            $table->integer('salary');
+            $table->integer('salary'); // in pennies
 
             $table->timestamps();
             $table->softDeletes();

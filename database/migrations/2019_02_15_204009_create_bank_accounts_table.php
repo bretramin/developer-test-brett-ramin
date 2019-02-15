@@ -16,7 +16,7 @@ class CreateBankAccountsTable extends Migration
         Schema::create('bank_accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('borrower_id')->unsigned();
-            $table->integer('balance');
+            $table->integer('balance'); // in pennies
 
             $table->timestamps();
             $table->softDeletes();
