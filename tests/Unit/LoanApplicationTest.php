@@ -61,7 +61,7 @@ class LoanApplicationTest extends TestCase
      * @return void
      * @test
      */
-    public function it_calculates_sum_of_borrowers_bank_salaries()
+    public function it_calculates_sum_of_borrowers_bank_balances()
     {
         $bankAccount1 = factory(BankAccount::class)->create([
             'borrower_id' => $this->borrower1->id,
