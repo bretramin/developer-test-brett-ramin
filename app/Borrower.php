@@ -38,13 +38,13 @@ class Borrower extends Model
      * The job the that belongs to the borrower.
      */
     public function job() {
-        return $this->hasOne(LoanApplication::class);
+        return $this->hasOne(Job::class);
     }
 
     /**
      * The bank account that belongs to the borrower.
      */
     public function bankAccount() {
-        return $this->hasOne(LoanApplication::class);
+        return $this->hasOne(BankAccount::class);
     }
 }
