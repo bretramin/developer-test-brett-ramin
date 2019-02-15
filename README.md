@@ -23,9 +23,7 @@
 - Write a unit test on at least one method in the project
   - I'm deliberatly keeping this requirement vague to give you freedom to decide what to test and how
 - Update this README file with any installation instructions needed so we can clone and run your code
-- Commit your feature branch back to a place where we can get it
-  - Either push back to this same repository (I'll need your GitHub username to add you to the repo)
-  - Or upload to your own account in GitHub / Gitlab / Bitbucket / etc...
+- Commit your feature branch back to this repository
 
 ## What I'm looking for
 
