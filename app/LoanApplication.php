@@ -28,19 +28,29 @@ class LoanApplication extends Model
     ];
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'total_annual_income',
+        'total_bank_balance',
+    ];
+
+    /**
      * The borrowers that belong to the loan application.
      */
     public function borrowers() {
         return $this->hasMany(Borrower::class);
     }
 
-    public function totalAnnualIncome() {
+    public function getTotalAnnualIncomeAttribute() {
         $borrowers = $this->borrowers->load('job');
 
         return $borrowers->sum('job.salary');
     }
 
-    public function totalBankBalance() {
+    public function getTotalBankBalanceAttribute() {
         $borrowers = $this->borrowers->load('bankAccount');
 
         return $borrowers->sum('bankAccount.balance');

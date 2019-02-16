@@ -52,7 +52,7 @@ class LoanApplicationTest extends TestCase
             'borrower_id' => $this->borrower2->id,
         ]);
 
-        $this->assertEquals($job1->salary + $job2->salary, $this->loanApplication->totalAnnualIncome());
+        $this->assertEquals($job1->salary + $job2->salary, $this->loanApplication->total_annual_income);
     }
 
     /**
@@ -70,6 +70,6 @@ class LoanApplicationTest extends TestCase
             'borrower_id' => $this->borrower2->id,
         ]);
 
-        $this->assertEquals($bankAccount1->balance + $bankAccount2->balance, $this->loanApplication->totalBankBalance());
+        $this->assertEquals($bankAccount1->balance + $bankAccount2->balance, $this->loanApplication->total_bank_balance);
     }
 }
