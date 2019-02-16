@@ -11,6 +11,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $loanApplication = factory(\App\LoanApplication::class)->create();
+        $borrowers       = factory(\App\Borrower::class, 2)->create([
+            'loan_application_id' => $loanApplication,
+        ]);
+        factory(\App\Job::class)->create([
+            'borrower_id' => $borrowers[0]->id,
+        ]);
+        factory(\App\Job::class)->create([
+            'borrower_id' => $borrowers[1]->id,
+        ]);
+        factory(\App\BankAccount::class)->create([
+            'borrower_id' => $borrowers[1]->id,
+        ]);
+
+        dump($loanApplication->toArray());
     }
 }
